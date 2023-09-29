@@ -1,0 +1,26 @@
+---
+title: "Project Preparation"
+output: pdf_document
+date: "2023-09-29"
+author: "Harley Clifton, Becky Catlett, Natasha Gesker, and Eliot Liucci"
+bibliography: bibliography.bib
+nocite: "@*"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Due October 18th  
+
+**Team Members:** Becky Catlett, Harley Clifton, Natasha Gesker, & Eliot Liucci
+
+We decided to go the topic exploration route.
+
+We have decided to look into ways that PCA can be used in combination with Neural Networks, both single-layer and multi-layer. We plan to research the neural network model, nonlinear transformations for data, and multidimensional scaling. Simulations will be used to create our examples. However, we would like your advice on what you think would be the best route for us to take: doing an overview of different types of neural networks or exploring one type of neural network more in-depth.
+
+To guide us in our exploration of Neural Networks, we plan to use the textbook An Introduction to Statistical Learning with Applications in R [@james2013introduction]
+
+\newpage  
+
+# References  
