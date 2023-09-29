@@ -21,6 +21,10 @@ We have decided to look into ways that PCA can be used in combination with Neura
 
 To guide us in our exploration of Neural Networks, we plan to use the textbook An Introduction to Statistical Learning with Applications in R [@james2013introduction].
 
+This article may have some insight as to simulations we can set up.  
+
+https://towardsdatascience.com/using-pca-to-reduce-number-of-parameters-in-a-neural-network-by-30x-times-fcc737159282
+
 \newpage  
 
 # References  
