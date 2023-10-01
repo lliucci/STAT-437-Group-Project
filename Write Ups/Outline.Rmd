@@ -21,7 +21,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ** Various Activation Functions  
 
-** Focus on Sigmoid  and Rectified Linear Unit (ReLU)
+** Focus on Sigmoid and Rectified Linear Unit (ReLU)
 
 * Hidden Layer  
 
@@ -35,3 +35,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Example  
 
+# Other Sources  
+
+https://www.datacamp.com/tutorial/neural-network-models-r
