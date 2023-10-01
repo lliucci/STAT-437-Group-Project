@@ -27,11 +27,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 * Output Layer
 
-# Single-Layer Neural Networks  
+# Single-Layer Neural Networks (Harley)  
 
 ## Example  
 
-# Multi-Layer Neural Networks  
+# Multi-Layer Neural Networks (Natasha)
 
 ## Example  
 
