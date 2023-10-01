@@ -1,0 +1,37 @@
+---
+title: "Outline"
+output: pdf_document
+date: "`r Sys.Date()`"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Introduction  
+
+## Deep Learning  
+
+## The Neural Network Model  
+
+* Input Layer  
+
+* Nonlinear Activation Function
+
+** Various Activation Functions  
+
+** Focus on Sigmoid  and Rectified Linear Unit (ReLU)
+
+* Hidden Layer  
+
+* Output Layer
+
+# Single-Layer Neural Networks  
+
+## Example  
+
+# Multi-Layer Neural Networks  
+
+## Example  
+
