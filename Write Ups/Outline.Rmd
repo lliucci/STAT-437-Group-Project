@@ -43,12 +43,12 @@ As discussed previously, the purpose of the activation function is to bring the 
 
 Another activation function that is more common in networks that require more "training" is the rectified linear activation unit function, or ReLU for short. The ReLU function is defined as  
 
-$R(x)=   \left\{
+$$R(x)=   \left\{
 \begin{array}{ll}
       0 & \text{if x < 0} \\
       x & \text{otherwise} \\
 \end{array} 
-\right.$
+\right.$$
 
 The benefits of using ReLU over Sigmoid is that ReLU can be better used for _backpropagation_, which is the main technique used to train networks. We will get more into this later.
 
