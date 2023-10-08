@@ -1,6 +1,42 @@
 # Single-Layer Neural Networks
 
+A Single-Layer Neural Network is a type of _feed forward neural network_, which means information flows in one direction, from input to output, without any feedback loops. In other words, in a feed forward neural network, there are no loops or cyclical connections between nodes.
+
+As the name implies, a Single-Layer Neural Network consists of an input layer, one hidden layer, and the output layer. The input layer, a vector we will call $X$, consists of _p_ variables $X = (X_1, X_2, ..., X_p)$. The neural network builds a nonlinear function $f(X)$ to predict the response $Y$. The nonlinear function $f(X)$ is the output layer. 
+
+To go from the input layer and build the output layer, the neural network creates a hidden layer that computes $k = 1, ..., K$ activations $A_k = h_k(X)$. The activations are nonlinear transformations of linear combinations of the $p$ input variables $X_1, X_2, ..., X_p$. These $h_k(X)$ are not fixed in advance, but rather learned during the training of the network. The $K$ activations from the hidden layer feed into the output layer to create the nonlinear function $f(X)$. 
+
+_Note on K_: $K$ is an arbitrary number chosen by the statistician. Generally, it is advised to chose a value of $K$ that is less than $2p$.
+
+A neural network with a single layer can be visualized as such:
+```{r, echo = F, out.width = "350px", fig.align = 'center', fig.cap = "Figure 1:  Single Layer Neural Network. This example has an input layer (blue) that consists of 4 variables. The hidden layer computes 3 activations (purple) that are nonlinear transformations of linear combinations of the input variables. The output layer (orange) is a linear model that uses these activations as inputs, resulting in a function f(X). In this example, there is only one output, but it is possible to have many."}
+knitr::include_graphics("SLNN_Graphic.PNG")
+```
+
+
+
+
+**Question for team: how to you feel about this? do you think it would benefit from adding more formulas? Or do we just want the basic idea behind single layer neural networks to be attainable from this section?**
+
+**Reminder for self: look at what Eliot does in his section and make sure I am not repeating any unnecessary information.**
+- should i talk about ReLU in SLNN or does ELiot basically cover that?
 
 
 
 ## Example 
+
+I have no idea what to do for an example
+
+possible ideas to return to: (talk to natasha)
+
+https://www.geeksforgeeks.org/single-layered-neural-networks-in-r-programming/#
+https://www.datacamp.com/tutorial/neural-network-models-r
+
+https://www.analyticsvidhya.com/blog/2017/09/creating-visualizing-neural-network-in-r/
+
+
+
+
+Graphic Citation link:
+https://towardsdatascience.com/multi-layer-neural-networks-with-sigmoid-function-deep-learning-for-rookies-2-bf464f09eb7f
+
