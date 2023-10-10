@@ -99,6 +99,12 @@ $$\frac{\delta C}{\delta w} = \frac{\delta z}{\delta w}\cdot \frac{\delta A}{\de
 
 Where $z$ is the weighted linear combination of inputs nodes, such that $A = g(z)$. In order to efficiently adjust the weights in the network, the algorithm known as backpropagation is used to find the gradient of the cost $\nabla C$, which then allows us to find the negative gradient $-\nabla C$, which will tell us which weights need to be changed in order to move in the direction of decreasing cost. This process repeats until we get a minimum.
 
+## Applications of Principal Component Analysis with Neural Networks  
+
+Neural networks can grow in complexity very quickly. Given a dataset with 20 input variables, we could end up requiring many nodes in the Hidden Layer. The training process can be timely and computationally expensive.  
+
+Principal Component Analysis would allow for those 20 input variables to be trimmed down to 2 or 3 principal components. This would also theoretically cut down on the number of nodes in the Hidden Layer, thus reducing the computational cost of fitting the model while maintaining the accuracy of the model.  
+
 # Single-Layer Neural Networks (Harley)  
 
 ## Example  
