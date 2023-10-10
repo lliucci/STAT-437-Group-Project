@@ -1,0 +1,30 @@
+# Multi-Layer Neural Networks
+
+A Multi-Layer Neural Network relays on the same structure as a Single-Layer Neural Network but typically has more than one hidden layey and many units per layer. While a single hidden layer with a large number of units could aproximate most function, using multiple hidden layers with a more modest number of units is easier and more practical.
+
+There will be multiple output variables instead of one. The variables represent a single qualitative variable and are dependent on each other.
+
+When building the hidden layers each new layer is build in context of the previous activation. For example, the first hidden layer will look the same as the activations for a Single-Layer Neural Network.
+
+$$A_k^{(1)} = h_k^{(1)}(X) = g(w_{k0}^{(1)} + \sum^{p}_{j=1}w_{kj}^{(1)}X_{j}$$
+
+The next hidden layer treats the activation $A_k^{(1)}$ of the first hidden layer as the inputs for the new activations. Here the activations $A_k^{(1)}$ from the first layer are functions of X.
+
+$$A_l^{(2)} = h_l^{(2)}(X) = g(w_{l0}^{(2)} + \sum^{K_1}_{k=1}w_{lk}^{(2)}A_{k}^{(1)}$$
+Each layer continues to use the activations of the layer before to build a a more complex output layer.
+
+Another diffrence between these activation formulas and the one used for Single-Layer is the new super scrips. These indacate which layer the activations and weights belong.
+
+The notation $\bf{W_1}$ represents the entire matrix of weights that feed from the input layer in to the first hidden layer, $L_1$. It has (p + 1) * (# of $L_1$) units. The '+ 1' is to account for the intercept. Each element from the first layer feeds into the second hidden layer, $L_2$, through $\bf{W_1}$. This matrix has (# of $L_1$ + 1) * (# of $L_2$)  units. This pattern continous on for teach hidden layer. All of these unit weights are stored in matrix $\bf{B}$.
+
+Multi-Layer also puts out a non-linear function to predict the response $Y$. In this case for m = 0, 1, ..., 9:
+$$f_m(X) = Z_m = \beta_{m0} + \sum^{K_2}_{l=1}\beta_{ml}h_l^{(2)} = \beta_{m0} + \sum^{K_2}_{l=1}\beta_{ml}A_l^{(2)}$$
+
+A special softmaz activation function can also be used to get the formula:
+
+$$f_m(X) = Pr(Y=m|X) = e^{Zm}/\sum^9_{l=0}e^{X_l}$$
+
+This ensures that all the outputs behave like probabilities.
+
+**There was a little bit more but that was the end of my understanding**
+
