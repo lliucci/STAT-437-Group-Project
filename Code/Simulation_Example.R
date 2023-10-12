@@ -1,4 +1,4 @@
-install.packages(c('neuralnet','keras','tensorflow'),dependencies = T)
+#install.packages(c('neuralnet','keras','tensorflow'),dependencies = T)
 
 library(tidyverse)
 library(neuralnet)
@@ -30,6 +30,11 @@ data("diamonds")
 diamonds <- diamonds %>%
   mutate(cut = factor(cut))
 
+normalize <- function(x) {
+  return ((x - min(x)) / (max(x) - min(x)))
+}
+
+diamonds[,5:10] <- normalize(diamonds[,5:10])
 
 # Breaking the data up allows for us to test the accuracy of the model on points that weren't used to build the network
 Train_Rows <- sample(1:nrow(diamonds), size = floor(2*nrow(diamonds)/3))
@@ -39,27 +44,31 @@ Test <- diamonds[-Train_Rows,]
 
 
 # For the model, we can use a typical formula that we would use in Regression. It is important to note that the predictors must be numeric (which is why PCA may be helpful here) and the response can be either, but the linear.output argument must be T if the response is numeric, and F otherwise. The "hidden = ___" argument is indicative of how many nodes we want in the hidden layer. In the example below, we want 4 nodes in the first layer and 2 in the second, hence "hidden = c(4,2)"  
-model = neuralnet(cut ~ depth + table + price + x + y + z, data = Train, hidden = c(4, 2), linear.output = F) 
+model = neuralnet(cut ~ depth + table + price + x + y + z, data = Train, hidden = 3, linear.output = F) 
 
 plot(model, rep = "best")
 
+Test_Temp <- Test %>% select(depth, table, price, x, y, z)
+
+compute(model, Test_Temp)
+
 pred <- predict(model, Test)
-labels <- c(levels(diamonds$cut))
+labels <- c("Fair", "Good", "Very Good", "Premium", "Ideal")
 prediction_label <- data.frame(max.col(pred)) %>%     
   mutate(pred=labels[max.col.pred.]) %>%
   select(2) %>%
   unlist()
 
-table(Test$Group, prediction_label)
+table(Test$cut, prediction_label)
 
-check = as.numeric(Test$Group) == max.col(pred)
+check = as.numeric(Test$cut) == max.col(pred)
 accuracy = (sum(check)/nrow(Test))*100
 print(accuracy)
 
 
 # Fitting Model w PCA -----------------------------------------------------
 
-prin.comps <- prcomp(scale(diamonds[Train_Rows,5:10]))
+prin.comps <- prcomp(diamonds[Train_Rows,5:10])
 
 summary(prin.comps)
 summary(prin.comps)$rotation
