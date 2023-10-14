@@ -111,43 +111,49 @@ Principal Component Analysis would allow for those 20 input variables to be trim
 
 ## Example  
 
-Using a subset of the `diamonds` data set that is included in base R, we fit a neural network using the quantitative variables to predict the cut of a diamond. This process took just under 4 hours to train with 6 input nodes, 3 nodes in the hidden layer , and 5 output nodes, and resulted in the following network.
+For an example of a single-layer network, we used the `airquality` dataset from the `datasets` package in R. We trained a model to predict Ozone levels using the other predictors available. We then trained a model to predict Ozone levels using the first 3 principal components and compared the results.  
 
 ```{r}
+airquality %>% select(-c(PC1, PC2, PC3)) %>% head(n = 5) %>% knitr::kable()
+```
+
+
+The network using the observed variables in the dataset can be seen below. The network was trained quickly and predicted Ozone levels with 5% error 90% of the time and predicted with 1% error 65% of the time. Impressive!
+
+```{r fig.cap = "Neural network using observed variables to predict Ozone levels"}
 plot(model)
 ```
 
-The accuracy of this network was 43.7% when classifying diamonds from a testing data set. If we wanted to increase this accuracy, we could increase the size of the training data set or change the model framework.  
+Comparing those results to the network trained using the first 3 principal components, we got predictions within 5% of the observed values 73% of the time and predictions within 1% of the observed values 62% of the time. The performance of the network using principal components is similar with a 1% error rate but falls behind within a 5% error rate.  
 
-When using the first 4 principal components of those same input variables, we got the following network.
-
-```{r}
+```{r fig.cap = "Neural network using first 3 principal components to predict Ozone levels"}
 plot(model.pc)
 ```
-
-The accuracy of this network was ____% when classifying the diamonds in the testing data set. While this accuracy is considerably lower than the model using the raw data, this network was trained in ____ .
-
-This brings us to the real benefit of using PCA in combination with neural networks. It is not to increase the accuracy of the network, but rather reduce the complexity. Reducing the size of the input layer will allow for increase complexity of the hidden layer or increased training set size without drastically increasing training time.
 
 # Multi-Layer Neural Networks (Natasha)
 
 ## Example  
 
-We performed a similar example to what we did for the single layer network, but now with multiple layers in the hidden layer. We used the `iris` dataset, predicting Species using Sepal Length, Sepal Width, Petal Length, and Petal Width. As this data set has only 150 observations, it was able to fit in less than a second.
+For an example of a multi-layer network, we used the `Iris` dataset from the `datasets` package in R. We trained a model to predict Species using Sepal Length, Sepal Width, Petal Length, and Petal Width and will compare its performance to a model using the first 2 principal components to predict Species.  
 
 ```{r}
+iris %>% select(-c(PC1, PC2, PC3)) %>% head(n =  5) %>% knitr::kable()
+```
+
+
+The network that uses the 4 observed features of a flower performed well, with an accuracy of 98%. Below we can see the structure of the network.  
+
+```{r fig.cap = "Neural network using observed variables to predict species"}
 plot(model2)
 ```
 
-The resulting accuracy was 98%, meaning the network correctly classified the species of the test flowers 98% of the time. 
+The network using the first 3 principal components also obtaining an accuracy of 98% with species classification, while only taking only $\frac{2}{3}$s of the time to train. We can see that network's structure below.  
 
-When using the same data, but instead training the model with the first 2 principal components, we get the following network.
-
-```{r}
+```{r gif.cap = "Neural network using first 3 principal components to predict species"}
 plot(model2.pc)
 ```
 
-This model also fit extremely quick and resulted in an accuracy of 98% again. This indicates that using the first two principal components, whose $\lambda$ values sum to 0.96, explain a majority of the variation in the data and are just as effective for classification problems with neural networks.
+The structure of these networks was the same, so it is unsurprising that the performance was also similar. A takeaway from this example is that PCA can be used to allow for simpler input layers while achieving similar results. When a data set includes thousands of observations to be used for training, reducing the time to train by $\frac{1}{3}$ can make a huge difference.
 
 \newpage
 
