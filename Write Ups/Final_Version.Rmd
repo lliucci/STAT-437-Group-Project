@@ -135,6 +135,11 @@ A Multi-Layer Neural Network relays on the same structure as a Single-Layer Neur
 
 There will be multiple output variables instead of one. The variables represent a single qualitative variable and are dependent on each other.
 
+A Multi-Layer neural network with a single layer can be visualized as such:
+```{r, echo = F, out.width = "350px", fig.align = 'center', fig.cap = "Figure 1"}
+knitr::include_graphics("images/MLNN_Graphic.PNG")
+```
+
 When building the hidden layers each new layer is build in context of the previous activation. For example, the first hidden layer will look the same as the activations for a Single-Layer Neural Network.
 
 $$A_k^{(1)} = h_k^{(1)}(X) = g(w_{k0}^{(1)} + \sum^{p}_{j=1}w_{kj}^{(1)}X_{j}$$
