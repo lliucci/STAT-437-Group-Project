@@ -180,7 +180,7 @@ knitr::include_graphics("images/iris_data_nn.png")
 
 The network using the first 3 principal components also obtaining an accuracy of 98% with species classification, while only taking only $\frac{2}{3}$s of the time to train. We can see that network's structure below.  
 
-```{r gif.cap = "Neural network using first 3 principal components to predict species"}
+```{r fig.cap = "Neural network using first 3 principal components to predict species"}
 knitr::include_graphics("images/iris_pc_nn.png")
 ```
 
