@@ -131,7 +131,7 @@ knitr::include_graphics("images/airquality_pc_nn.png")
 
 # Multi-Layer Neural Networks 
 
-A Multi-Layer Neural Network relays on the same structure as a Single-Layer Neural Network but typically has more than one hidden layey and many units per layer. While a single hidden layer with a large number of units could aproximate most function, using multiple hidden layers with a more modest number of units is easier and more practical.
+A Multi-Layer Neural Network relays on the same structure as a Single-Layer Neural Network but typically has more than one hidden layer and many units per layer. While a single hidden layer with a large number of units could approximate most function, using multiple hidden layers with a more modest number of units is easier and more practical.
 
 There will be multiple output variables instead of one. The variables represent a single qualitative variable and are dependent on each other.
 
