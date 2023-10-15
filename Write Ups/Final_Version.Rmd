@@ -25,9 +25,9 @@ load("../437-single-layer-neural-nets.Rdata")
 
 # Introduction  
 
-## Deep Learning (Becky)
+## Deep Learning 
 
-## The Neural Network Model (Eliot)
+## The Neural Network Model 
 
 A neural network is a type of deep learning algorithm that makes use of a web of nodes to predict or classify data. The complexity of a neural network can vary greatly based on what task is required. As the name suggests, they are similar in function to neurons in a brain. The model takes in information through the _input layer_, which then activates various nodes in the _hidden layers_, and then a result is produced.
 
@@ -84,7 +84,7 @@ Neural networks can grow in complexity very quickly. Given a dataset with 20 inp
 
 Principal Component Analysis would allow for those 20 input variables to be trimmed down to 2 or 3 principal components. This would also theoretically cut down on the number of nodes in the Hidden Layer, thus reducing the computational cost of fitting the model while maintaining the accuracy of the model.  
 
-# Single-Layer Neural Networks (Harley)  
+# Single-Layer Neural Networks  
 
 A Single-Layer Neural Network is a type of _feed forward neural network_, which means information flows in one direction, from input to output, without any feedback loops. In other words, in a feed forward neural network, there are no loops or cyclical connections between nodes.
 
@@ -129,7 +129,7 @@ Comparing those results to the network trained using the first 3 principal compo
 knitr::include_graphics("images/airquality_pc_nn.png")
 ```
 
-# Multi-Layer Neural Networks (Natasha)
+# Multi-Layer Neural Networks 
 
 ## Example  
 
