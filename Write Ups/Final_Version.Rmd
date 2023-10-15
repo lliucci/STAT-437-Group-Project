@@ -96,7 +96,7 @@ _Note on K_: $K$ is an arbitrary number chosen by the statistician. Generally, i
 
 A neural network with a single layer can be visualized as such:
 ```{r, echo = F, out.width = "350px", fig.align = 'center', fig.cap = "Figure 1:  Single Layer Neural Network. This example has an input layer (blue) that consists of 4 variables. The hidden layer computes 3 activations (purple) that are nonlinear transformations of linear combinations of the input variables. The output layer (orange) is a linear model that uses these activations as inputs, resulting in a function f(X). In this example, there is only one output, but it is possible to have many."}
-knitr::include_graphics("SLNN_Graphic.PNG")
+knitr::include_graphics("images/SLNN_Graphic.PNG")
 ```
 
 However, if a data set contains a large number of predictor variables - and thus the input layer consists of many neurons - fitting the neural network can quickly become complex. Not only would this potentially require many nodes in the hidden layer, but it may also be computationally expensive. In situations like this, it would be useful to reduce the number of nodes in the input layer.
