@@ -92,10 +92,10 @@ As the name implies, a Single-Layer Neural Network consists of an input layer, o
 
 To go from the input layer and build the output layer, the neural network creates a hidden layer that computes $k = 1, ..., K$ activations $A_k = h_k(X)$. The activations are nonlinear transformations of linear combinations of the $p$ input variables $X_1, X_2, ..., X_p$. These $h_k(X)$ are not fixed in advance, but rather learned during the training of the network. The $K$ activations from the hidden layer feed into the output layer to create the nonlinear function $f(X)$. 
 
-_Note on K_: $K$ is an arbitrary number chosen by the statistician. Generally, it is advised to chose a value of $K$ that is less than $2p$.
+___Note on K___: $K$ is an arbitrary number chosen by the statistician. Generally, it is advised to chose a value of $K$ that is less than $2p$.
 
 A neural network with a single layer can be visualized as such:
-```{r, echo = F, out.width = "350px", fig.align = 'center', fig.cap = "Figure 1:  Single Layer Neural Network. This example has an input layer (blue) that consists of 4 variables. The hidden layer computes 3 activations (purple) that are nonlinear transformations of linear combinations of the input variables. The output layer (orange) is a linear model that uses these activations as inputs, resulting in a function f(X). In this example, there is only one output, but it is possible to have many."}
+```{r, echo = F, out.width = "350px", fig.align = 'center', fig.cap = "Single Layer Neural Network. This example has an input layer (blue) that consists of 4 variables. The hidden layer computes 3 activations (purple) that are nonlinear transformations of linear combinations of the input variables. The output layer (orange) is a linear model that uses these activations as inputs, resulting in a function f(X). In this example, there is only one output, but it is possible to have many."}
 knitr::include_graphics("images/SLNN_Graphic.PNG")
 ```
 
