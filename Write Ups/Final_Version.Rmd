@@ -103,7 +103,7 @@ However, if a data set contains a large number of predictor variables - and thus
 
 Principal Component Analysis (PCA) can also be used in conjunction with Single Layer Neural Networks. In this scenario, the investigator begins by conducting PCA on the data. Then, the input layer in the neural network will consist of _q_ principal components, instead of the _p_ variables in the dataset. Here, _q_ < _p_, hence reducing the number of nodes in the input layer.
 
-Thus, if we return the generalized visual example in **Figure 1** above, the four blue neurons of the input layer would represent the first four principal components. It is worth noting that the number of principal components that make up the input layer is not standardized, but rather it should consist of as many as are deemed necessary via principal component analysis prior to building the neural network. 
+Thus, if we return the generalized visual example in **Figure 2** above, the four blue neurons of the input layer would represent the first four principal components. It is worth noting that the number of principal components that make up the input layer is not standardized, but rather it should consist of as many as are deemed necessary via principal component analysis prior to building the neural network. 
 
 The contents of the input layer is the main difference between typical Single-Layer Neural Networks and Single-Layer Neural Networks with PCA. The follow steps of conducting a Single-Layer Neural Network remain the same. 
 
