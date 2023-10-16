@@ -24,11 +24,13 @@ load("../437-single-layer-neural-nets.Rdata")
 
 # Summary 
 
-Neural Network Models and Principal Component Analysis (PCA) can be used together to better understand data. While neural networks have a lot of potential, they can get bogged down by their own complexity and heavy computational load. Using PCA can help with these problems when properly used. To fully understand the usefulness of Nueral Network Models the various layers, deep learning, and the difference between Single-Layer and Multi-Layer Neural Networks will be explored using both theory and examples using data sets familiar to this class.
+Neural Network Models and Principal Component Analysis (PCA) can be used together to better understand data. While neural networks have a lot of potential, they can get bogged down by their own complexity and heavy computational load. Using PCA can help with these problems when properly used. To fully understand the usefulness of Neural Network Models the various layers, deep learning, and the difference between Single-Layer and Multi-Layer Neural Networks will be explored using both theory and examples using data sets familiar to this class.
 
-# Introduction  
+# Introduction to Deep Learning
 
-## Deep Learning 
+The Neural Network model is a deep learning technique based off the human brain and the neural networks that exist there. Deep learning is a concept similar to machine learning and artificial intelligence techniques. Neural Network modeling techniques were widely used in the 1980s, according to ISL. Currently, Neural Networks are not a common learning technique due to newer, more simple modeling techniques such as random forests. With the booming growth in the artificial intelligence, statisticians are often exposed to machine learning and data science techniques. We will be exploring Neural Networks in this chapter, along with its relationship with Principal Component Analysis. The examples and code will be written in R, with Google's _tensorflow_ software playing a comprehensive roll in coding methods for Neural Network models.
+
+Principal Component Analysis is a technique used to reduce the numbers of columns in a multivariate dataset in order to better visualize the data and create input for a regression model. Often using correlation matrices, principal component analysis converts the original variables into smaller dimensions. In the following text, we will go further into depth on neural networks and principal component analysis, and the connection between the two.
 
 ## The Neural Network Model 
 
@@ -87,7 +89,7 @@ A Single-Layer Neural Network is a type of _feed forward neural network_, which 
 
 To go from the input layer and build the output layer, the neural network creates a hidden layer that computes $k = 1, ..., K$ activations $A_k = h_k(X)$. The activations are nonlinear transformations of linear combinations of the $p$ input variables $X_1, X_2, ..., X_p$. Mathematically, we can write the _activation_ of the 1st node of the hidden layer, $A_1$, as  
 
-$$A_1 = h_k(X) =g(w_{0,1} + \sum_{j=1}^{p}w_{j,1}\cdot X_j)$$  
+$$A_1 = h_k(X) = g(w_{0,1} + \sum_{j=1}^{p}w_{j,1}\cdot X_j)$$  
 
 These $h_k(X)$ are not fixed in advance, but rather learned during the training of the network. The $K$ activations from the hidden layer feed into the output layer to create the nonlinear function $f(X)$. 
 
@@ -102,7 +104,7 @@ However, as a model becomes more complex, it potentially requires many nodes in 
 
 PCA can also be used in conjunction with Single Layer Neural Networks. In this scenario, the investigator begins by conducting PCA on the data. Then, the input layer in the neural network will consist of _q_ principal components, instead of the _p_ variables in the dataset. Here, _q_ < _p_, hence reducing the number of nodes in the input layer.
 
-Thus, if we return the generalized visual example in **Figure 2** above, the four blue neurons of the input layer would represent the first four principal components. It is worth noting that the number of principal components that make up the input layer is not standardized, but rather it should consist of as many as are deemed necessary via principal component analysis prior to building the neural network. 
+Thus, if we return the generalized visual example in **Figure 2** above, the four blue neurons of the input layer would represent the first four principal components. It is worth noting that the number of principal components that make up the input layer is not standardized, but rather it should consist of as many nodes (principal components) as are deemed necessary via principal component analysis prior to building the neural network. 
 
 The contents of the input layer is the main difference between typical Single-Layer Neural Networks and Single-Layer Neural Networks with PCA. The follow steps of conducting a Single-Layer Neural Network remain the same. 
 
