@@ -1,0 +1,18 @@
+---
+title: "Introduction - Deep Learning"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+  The Neural Network model is a deep learning technique based off the human brain and the neural networks that exist there. Deep learning is a concept similar to machine learning and artificial intellegence techniques. Neural Network modeling techniques were widely used in the 1980s, according to ISL. Currently, Neural Networks is not a common learning technique due to newer, more simple modeling techniques such as random forests. With the booming growth in the artificial intellegence, statisticians are often exposed to machine learning and data science techniques. We will be exploring Neural Networks in this chapter, along with its relationship with Principal Component Analysis. The examples and code will be written in R, with Google's _tensorflow_ software playing a comprehensive roll in coding methods for Neural Network models.
+
+  Principal Component Analysis is a technique used to reduce the numbers of columns in a multivariate dataset in order to better visualize the data and create input for a regression model. Often using correlation matrices, principal component analysis converts the original variable into a smaller dimension. In the following text, we will go further into depth on neural networks and principal component analysis, and the connection between the two.
+  
+**Do I capitalize Neural Networks and PCA? Find a reference somewhere**
+
+
