@@ -22,6 +22,9 @@ load("../437-single-layer-neural-nets.Rdata")
 \tableofcontents
 \newpage
 
+# Summary 
+
+Neural Network Models and Principal Component Analysis (PCA) can be used together to better understand data. While neural networks have a lot of potential, they can get bogged down by their own complexity and heavy computational load. Using PCA can help with these problems when properly used. To fully understand the usefulness of Nueral Network Models the various layers, deep learning, and the difference between Single-Layer and Multi-Layer Neural Networks will be explored using both theory and examples using data sets familiar to this class.
 
 # Introduction  
 
@@ -29,15 +32,15 @@ load("../437-single-layer-neural-nets.Rdata")
 
 ## The Neural Network Model 
 
-A neural network is a type of deep learning algorithm that makes use of a web of nodes to predict or classify data. The complexity of a neural network can vary greatly based on what task is required. As the name suggests, they are similar in function to neurons in a brain. The model takes in information through the _input layer_, which then activates various nodes in the _hidden layers_, and then a result is produced.
+A neural network is a type of deep learning algorithm that makes use of a web of nodes to predict or classify data. The complexity of a neural network can vary greatly based on the task at hand. As the name suggests, these models are similar to the function of neurons in a brain. The model takes in information through the _input layer_, which then activates various nodes in the _hidden layers_, and then a result is produced.
 
 ### The Input Layer
 
-The input layer is where data can be input into the model. If we have $p$ input variables, which we will denote $X = X_1, X_2, ..., X_p$, then our network will have $p$ input nodes. Each node in future layers will depend on the value that $X_i$ holds. 
+The input layer is where data can be inserted into the model. If we have $p$ input variables, which we will denote $X = X_1, X_2, ..., X_p$, then our network will have $p$ input nodes. Each node in future layers will depend on the value that $X_i$ holds. 
 
 ### Nonlinear Activation Functions  
 
-Before we get into the hidden layer, it is important to understand what is happening at each hidden layer node. Each hidden layer node is computed by taking a weighted linear combination of the input layer and then applying a _nonlinear activation function_ so that the _activation_, which is the value the node will take based on input vector $X$, will be between 0 and 1.
+Before we get into the hidden layer, it is important to understand what is happening at each hidden layer node. Each hidden layer node is computed by taking a weighted linear combination of the input layer and then applying a _nonlinear activation function_ so that the _activation_, which is the value the node will take based on input vector $X$ and will be between 0 and 1.
 
 We will discuss two of the most common activation functions. For simpler networks, the _sigmoid_ function is effective. The sigmoid function is defined as  
 
@@ -64,13 +67,7 @@ Hidden layers are the bread and butter of neural network models. Take, for examp
 knitr::include_graphics("images/hidden_layer_example.png")
 ```
 
-Mathematically, we can write the _activation_ of the 1st node of the hidden layer, $A_1$, as  
-
-$$A_1 = h_k(X) =g(w_{0,1} + \sum_{j=1}^{p}w_{j,1}\cdot X_j)$$  
-
-Where $g(.)$ is the nonlinear activation function of choice and $w_{j,1}$ is the weight associated with activation 1 and input node $j$. The value of $w_{0,1}$ is called the "bias" and can be added to offset the activation so that the minimum value matches what it is expected to be. For each activation of the hidden layer, we are taking a weighted sum of all nodes in the input layer. The activation function restricts the range of the values the activation can hold. For Sigmoid, it would be between 0 and 1 while ReLU would just be greater than or equal to 0. This can be generalized further for $k$ activations  
-
-$$A_k = g(w_{0,k} + \sum_{j=1}^{p}w_{j,k}\cdot X_j)$$
+Where $g(.)$ is the nonlinear activation function of choice and $w_{j,1}$ is the weight associated with activation 1 and input node $j$. The value of $w_{0,1}$ is called the "bias" and can be added to offset the activation so that the minimum value matches what it is expected to be. For each activation of the hidden layer, we are taking a weighted sum of all nodes in the input layer. The activation function restricts the range of the values the activation can hold. For Sigmoid, it would be between 0 and 1 while ReLU would just be greater than or equal to 0.
 
 ### Output Layer
 
@@ -80,17 +77,19 @@ $$f(x) = \beta_0 + \sum_{k = 1}^{k}A_k\cdot \beta_k$$
 
 ## Applications of Principal Component Analysis with Neural Networks  
 
-Neural networks can grow in complexity very quickly. Given a dataset with 20 input variables, we could end up requiring many nodes in the Hidden Layer. The training process can be timely and computationally expensive.  
+Neural networks can quickly grow in complexity. Given a dataset with 20 input variables, we could end up requiring many nodes in the Hidden Layer. The training process can be timely and computationally expensive.  
 
 Principal Component Analysis would allow for those 20 input variables to be trimmed down to 2 or 3 principal components. This would also theoretically cut down on the number of nodes in the Hidden Layer, thus reducing the computational cost of fitting the model while maintaining the accuracy of the model.  
 
 # Single-Layer Neural Networks  
 
-A Single-Layer Neural Network is a type of _feed forward neural network_, which means information flows in one direction, from input to output, without any feedback loops. In other words, in a feed forward neural network, there are no loops or cyclical connections between nodes.
+A Single-Layer Neural Network is a type of _feed forward neural network_, which means information flows in one direction, from input to output, without any feedback loops. In other words, in a feed forward neural network, there are no loops or cyclical connections between nodes. The neural network builds a nonlinear function $f(X)$ to predict the response $Y$. The nonlinear function $f(X)$ is the output layer. 
 
-As the name implies, a Single-Layer Neural Network consists of an input layer, one hidden layer, and the output layer. The input layer, a vector we will call $X$, consists of _p_ variables $X = (X_1, X_2, ..., X_p)$. The neural network builds a nonlinear function $f(X)$ to predict the response $Y$. The nonlinear function $f(X)$ is the output layer. 
+To go from the input layer and build the output layer, the neural network creates a hidden layer that computes $k = 1, ..., K$ activations $A_k = h_k(X)$. The activations are nonlinear transformations of linear combinations of the $p$ input variables $X_1, X_2, ..., X_p$. Mathematically, we can write the _activation_ of the 1st node of the hidden layer, $A_1$, as  
 
-To go from the input layer and build the output layer, the neural network creates a hidden layer that computes $k = 1, ..., K$ activations $A_k = h_k(X)$. The activations are nonlinear transformations of linear combinations of the $p$ input variables $X_1, X_2, ..., X_p$. These $h_k(X)$ are not fixed in advance, but rather learned during the training of the network. The $K$ activations from the hidden layer feed into the output layer to create the nonlinear function $f(X)$. 
+$$A_1 = h_k(X) =g(w_{0,1} + \sum_{j=1}^{p}w_{j,1}\cdot X_j)$$  
+
+These $h_k(X)$ are not fixed in advance, but rather learned during the training of the network. The $K$ activations from the hidden layer feed into the output layer to create the nonlinear function $f(X)$. 
 
 ___Note on K___: $K$ is an arbitrary number chosen by the statistician. Generally, it is advised to chose a value of $K$ that is less than $2p$.
 
@@ -99,9 +98,9 @@ A neural network with a single layer can be visualized as such:
 knitr::include_graphics("images/SLNN_Graphic.PNG")
 ```
 
-However, if a data set contains a large number of predictor variables - and thus the input layer consists of many neurons - fitting the neural network can quickly become complex. Not only would this potentially require many nodes in the hidden layer, but it may also be computationally expensive. In situations like this, it would be useful to reduce the number of nodes in the input layer.
+However, as a model becomes more complex, it potentially requires many nodes in the hidden layer, but it may also be computationally expensive. In situations like this, it would be useful to reduce the number of nodes in the input layer.
 
-Principal Component Analysis (PCA) can also be used in conjunction with Single Layer Neural Networks. In this scenario, the investigator begins by conducting PCA on the data. Then, the input layer in the neural network will consist of _q_ principal components, instead of the _p_ variables in the dataset. Here, _q_ < _p_, hence reducing the number of nodes in the input layer.
+PCA can also be used in conjunction with Single Layer Neural Networks. In this scenario, the investigator begins by conducting PCA on the data. Then, the input layer in the neural network will consist of _q_ principal components, instead of the _p_ variables in the dataset. Here, _q_ < _p_, hence reducing the number of nodes in the input layer.
 
 Thus, if we return the generalized visual example in **Figure 2** above, the four blue neurons of the input layer would represent the first four principal components. It is worth noting that the number of principal components that make up the input layer is not standardized, but rather it should consist of as many as are deemed necessary via principal component analysis prior to building the neural network. 
 
@@ -150,7 +149,7 @@ The next hidden layer treats the activation $A_k^{(1)}$ of the first hidden laye
 $$A_l^{(2)} = h_l^{(2)}(X) = g(w_{l0}^{(2)} + \sum^{K_1}_{k=1}w_{lk}^{(2)}A_{k}^{(1)}$$
 Each layer continues to use the activations of the layer before to build a a more complex output layer.
 
-Another diffrence between these activation formulas and the one used for Single-Layer is the new super scrips. These indacate which layer the activations and weights belong.
+Another difference between these activation formulas and the one used for Single-Layer is the new super scrips. These indicate which layer the activations and weights belong.
 
 The notation $\bf{W_1}$ represents the entire matrix of weights that feed from the input layer in to the first hidden layer, $L_1$. It has (p + 1) * (# of $L_1$) units. The '+ 1' is to account for the intercept. Each element from the first layer feeds into the second hidden layer, $L_2$, through $\bf{W_1}$. This matrix has (# of $L_1$ + 1) * (# of $L_2$)  units. This pattern continuous on for teach hidden layer. All of these unit weights are stored in matrix $\bf{B}$.
 
