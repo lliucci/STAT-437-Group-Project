@@ -13,30 +13,22 @@ A neural network with a single layer can be visualized as such:
 knitr::include_graphics("SLNN_Graphic.PNG")
 ```
 
+However, if a data set contains a large number of predictor variables - and thus the input layer consists of many neurons - fitting the neural network can quickly become complex. Not only would this potentially require many nodes in the hidden layer, but it may also be computationally expensive. In situations like this, it would be useful to reduce the number of nodes in the input layer.
 
+Principal Component Analysis (PCA) can also be used in conjunction with Single Layer Neural Networks. In this scenario, the investigator begins by conducting PCA on the data. Then, the input layer in the neural network will consist of _q_ principal components, instead of the _p_ variables in the dataset. Here, _q_ < _p_, hence reducing the number of nodes in the input layer.
 
+Thus, if we return the generalized visual example in **Figure 1** above, the four blue neurons of the input layer would represent the first four principal components. It is worth noting that the number of principal components that make up the input layer is not standardized, but rather it should consist of as many as are deemed necessary via principal component analysis prior to building the neural network. 
 
-**Question for team: how to you feel about this? do you think it would benefit from adding more formulas? Or do we just want the basic idea behind single layer neural networks to be attainable from this section?**
-
-**Reminder for self: look at what Eliot does in his section and make sure I am not repeating any unnecessary information.**
-- should i talk about ReLU in SLNN or does ELiot basically cover that?
+The contents of the input layer is the main difference between typical Single-Layer Neural Networks and Single-Layer Neural Networks with PCA. The follow steps of conducting a Single-Layer Neural Network remain the same. 
 
 
 
 ## Example 
 
-I have no idea what to do for an example
-
-possible ideas to return to: (talk to natasha)
-
-https://www.geeksforgeeks.org/single-layered-neural-networks-in-r-programming/#
-https://www.datacamp.com/tutorial/neural-network-models-r
-
-https://www.analyticsvidhya.com/blog/2017/09/creating-visualizing-neural-network-in-r/
-
-
+(Eliot added on Outline.Rmd)
 
 
 Graphics Citation link:
+
 https://towardsdatascience.com/multi-layer-neural-networks-with-sigmoid-function-deep-learning-for-rookies-2-bf464f09eb7f
 
