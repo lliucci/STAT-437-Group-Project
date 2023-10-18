@@ -13,7 +13,7 @@ header-includes:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = F, message = F, warning = F, out.width = "75%", fig.align = "center")
+knitr::opts_chunk$set(echo = F, message = F, warning = F, out.width = "50%", fig.align = "center")
 library(tidyverse)
 
 load("../437-single-layer-neural-nets.Rdata")
@@ -96,7 +96,7 @@ These $h_k(X)$ are not fixed in advance, but rather learned during the training 
 ___Note on K___: $K$ is an arbitrary number chosen by the statistician. Generally, it is advised to chose a value of $K$ that is less than $2p$.
 
 A neural network with a single layer can be visualized as such:
-```{r, echo = F, out.width = "350px", fig.align = 'center', fig.cap = "Single Layer Neural Network. This example has an input layer (blue) that consists of 4 variables. The hidden layer computes 3 activations (purple) that are nonlinear transformations of linear combinations of the input variables. The output layer (orange) is a linear model that uses these activations as inputs, resulting in a function f(X). In this example, there is only one output, but it is possible to have many."}
+```{r fig.cap = "Single Layer Neural Network. This example has an input layer (blue) that consists of 4 variables. The hidden layer computes 3 activations (purple) that are nonlinear transformations of linear combinations of the input variables. The output layer (orange) is a linear model that uses these activations as inputs, resulting in a function f(X). In this example, there is only one output, but it is possible to have many."}
 knitr::include_graphics("images/SLNN_Graphic.PNG")
 ```
 
@@ -137,7 +137,7 @@ A Multi-Layer Neural Network relays on the same structure as a Single-Layer Neur
 Now, there will be multiple output variables instead of one. The variables represent a single qualitative variable, and are dependent on each other.
 
 A Multi-Layer Neural Network can be visualized as such:
-```{r, echo = F, fig.cap = "Multi-Layer Neural Network. This example has an input layer (blue) that consists of 4 variables. The first hidden layer computes 3 activations (purple) and the second hidden layer also computes 3 activations (purple). The output layer (orange) is a linear model that uses these activations as inputs, resulting in a function f(X). This example only has one output, but it is possible to have many."}
+```{r fig.cap = "Multi-Layer Neural Network. This example has an input layer (blue) that consists of 4 variables. The first hidden layer computes 3 activations (purple) and the second hidden layer also computes 3 activations (purple). The output layer (orange) is a linear model that uses these activations as inputs, resulting in a function f(X). This example only has one output, but it is possible to have many."}
 knitr::include_graphics("images/MLNN_Graphic.PNG")
 
 ```
